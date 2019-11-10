@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Tagggr</string>
 
+    <!--    Facebook SDK-->
     <string name="facebook_app_id">2327303624063439</string>
     <string name="fb_login_protocol_scheme">fb2327303624063439</string>
+
+    <!--    Firebase SDK-->
+    <string name="facebook_application_id" translatable="false">2327303624063439</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb2327303624063439</string>
 
 </resources>
