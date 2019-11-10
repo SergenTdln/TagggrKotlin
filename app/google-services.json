@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "219189747917",
+    "firebase_url": "https://tagggr-firebase.firebaseio.com",
+    "project_id": "tagggr-firebase",
+    "storage_bucket": "tagggr-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219189747917:android:7ec3dd003f7fe52ed68984",
+        "android_client_info": {
+          "package_name": "dev.tasdelen.tagggr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219189747917-v52oa7pl5al2k5gbs988rl08hqh2qtp1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.tasdelen.tagggr",
+            "certificate_hash": "9058eb5b7988b55bb3a619b3aa0c6767af58ebd3"
+          }
+        },
+        {
+          "client_id": "219189747917-86fm2p99bk37ejpos951rv2j3s0o305o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKYiXV9cJrPZIW9bN9rsjrUAz9eUrYrpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219189747917-86fm2p99bk37ejpos951rv2j3s0o305o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
