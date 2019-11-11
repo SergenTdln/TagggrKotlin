@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">Tagggr</string>
 
-    <!--    Facebook SDK-->
-    <string name="facebook_app_id">2327303624063439</string>
-    <string name="fb_login_protocol_scheme">fb2327303624063439</string>
 
     <!--    Firebase SDK-->
     <string name="facebook_application_id" translatable="false">2327303624063439</string>
     <string name="facebook_login_protocol_scheme" translatable="false">fb2327303624063439</string>
+    <string name="logout_menu_btn_txt">Logout</string>
+    <string name="login_login_failed">Login failed</string>
+    <string name="tap_to_exit">Please click BACK again to exit</string>
+    <string name="login_user_connected">User connected</string>
 
 </resources>
