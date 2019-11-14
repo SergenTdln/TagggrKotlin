@@ -1,6 +1,7 @@
 package dev.tasdelen.tagggr
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Context
 import com.facebook.CallbackManager
 import com.firebase.ui.auth.AuthUI
@@ -11,10 +12,14 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
+import android.text.Editable
 import android.util.Base64
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import android.util.Log
+import android.view.Window
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import com.facebook.login.Login
 import com.firebase.ui.auth.ErrorCodes
@@ -77,18 +82,24 @@ class LoginActivity : AppCompatActivity() {
 
             if (resultCode == Activity.RESULT_OK) {
                 // Successfully signed in
-                val userName: String? = userSession?.displayName
                 val userEmail: String? = response?.email
-                val userPhoto: Uri? = userSession?.photoUrl
                 val isNewUser: Boolean? = response?.isNewUser
 
                 if (isNewUser!!) {
-                    register_user_db(userName!!, userEmail!!, userPhoto!!)
+                    Log.i("Tag", "$ $userEmail ")
+                    loadCompleteProfileActivity(userEmail!!)
+                } else {
+                    Toast.makeText(
+                        this,
+                        getString(R.string.login_user_connected),
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+
+                    loadMainActivity()
                 }
 
-                Toast.makeText(this, getString(R.string.login_user_connected), Toast.LENGTH_SHORT)
-                    .show()
-                loadMainActivity()
+
             } else {
                 Toast.makeText(this, getString(R.string.login_login_failed), Toast.LENGTH_SHORT)
                     .show()
@@ -177,6 +188,15 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
+    fun loadCompleteProfileActivity(userEmail: String) {
+        val i = Intent(this, CompleteProfile::class.java)
+        Log.i("Tag", "data email before intent $userEmail")
+        i.putExtra("userEmail", userEmail)
+        setResult(Activity.RESULT_OK, i)
+        startActivity(i)
+        finish()
+    }
+
     fun generate_key_hash() {
         // Add code to print out the key hash
         try {
@@ -195,13 +215,6 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
-    }
-
-    fun register_user_db(name: String, email: String, photo: Uri) {
-        val user = User(name, email, photo)
-        Toast.makeText(this, "hello ${user.name}", Toast.LENGTH_SHORT).show()
-        Log.i("Tag", "user data $user")
-        //TODO Register user in firebase database
     }
 
 
